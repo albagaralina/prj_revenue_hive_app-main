@@ -1,0 +1,9 @@
+a {
+    color: var(--#{$prefix}primary);
+}
+
+a {
+    &:hover {
+        color: var(--#{$prefix}primary-hover-bg);
+    }
+}

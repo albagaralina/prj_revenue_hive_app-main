@@ -1,0 +1,154 @@
+.nav-tabs {
+    margin-bottom: .5rem;
+    .nav-link {
+        &:focus,&:hover {
+            color: var(--bs-primary)  
+        }
+        &.active {
+            color: var(--bs-white);
+            background-color: var(--bs-primary);
+            border-color: var(--bs-primary);
+        }
+    }
+}
+.nav-pills {
+    @include border-radius($nav-pills-border-radius);
+    margin-bottom: .5rem;
+}
+
+.nav-tunnel {
+    padding: $spacer * .25;
+    background: $gray-200;
+    border: 1px solid var(--#{$variable-prefix}primary);
+    .nav-link {
+        padding: $spacer * .25 1rem;
+    }
+}
+
+// Bottom Bordered Nav Tabs
+.tab-bottom-bordered{
+    border-bottom: 4px solid rgba(var(--#{$variable-prefix}primary-rgb),.1);
+    .nav-tabs{
+        .nav-link{
+            color: $body-color;
+            position: relative;
+            &::after{
+                content: '';
+                position: absolute;
+                width: 0%;
+                height: 3px;
+                border-radius: $border-radius;
+                background: var(--#{$variable-prefix}primary);
+                bottom: -3px;
+                left: 50%;
+                top: unset;
+                z-index: 1;
+                transition: all 400ms ease;
+            }
+            &::before{
+                content: '';
+                position: absolute;
+                width: 0%;
+                height: 3px;
+                border-radius: $border-radius;
+                background: var(--#{$variable-prefix}primary);
+                bottom: -3px;
+                right: 50%;
+                top: unset;
+                z-index: 1;
+                transition: all 400ms ease;
+            }
+            &.active{
+                background-color: unset;
+                color: var(--#{$variable-prefix}primary);
+                box-shadow: unset;
+                &::before{
+                    width: 60%;
+                    right: 0;
+                    transition: all 400ms ease;
+                }
+                &::after{
+                    width: 60%;
+                    left: 0;
+                    transition: all 400ms ease;
+                }
+            }
+        }
+    }
+    &.iq-custom-tab-border{
+        .nav-tabs{
+            .nav-link{
+                &:nth-child(1){
+                    padding-left: unset;
+                }
+            }
+        }
+    }
+}
+
+// Icon With Nav Tab
+.nav-iconly{
+    .nav-link{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        @if $enable-rounded == true {
+            border-radius: .5rem;
+        }
+        padding: 1rem;
+        background: rgba($gray, 0.1);
+        color: inherit;
+    }
+}
+// Tab Animation
+.tab-content{
+    &.iq-tab-fade-up{
+        .tab-pane.fade {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+            &.active.show {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    }
+}
+
+/*======================
+like-tabs
+============================*/
+.liked-tabs{
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0;
+    border: none;
+
+    .nav-link{
+        padding: 0;
+        background-color: transparent;
+        border: none;
+        color: var(--bs-body-color);
+
+        .reaction-img{
+            height: 18px;
+            width: 18px;
+            object-fit: cover;
+        }
+
+        &.active{
+            background-color: transparent;
+            color: var(--bs-primary);
+        }
+    }
+}
+
+.reaction-user-container{
+    .reaction-img{
+        height: 18px;
+        width: 18px;
+        object-fit: cover;
+    }
+}

@@ -1,0 +1,40 @@
+.chat-popup-modal{
+    right: auto;
+    left: 350px;
+
+    .chat-popup-form{
+        input{
+            padding: $input-padding-y $input-padding-x $input-padding-y 50px;
+        }
+
+        .chat-popup-form-button{
+            right: auto;
+            left: 0;
+            border-top-left-radius: var(--bs-btn-border-radius);
+            border-bottom-left-radius: var(--bs-btn-border-radius);
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+    } 
+
+    .chat-popup-message {
+        border-radius: var(--bs-border-radius-lg) var(--bs-border-radius-lg) 0 var(--bs-border-radius-lg);
+        
+        &.message-right {
+            border-radius: var(--bs-border-radius-lg) var(--bs-border-radius-lg) var(--bs-border-radius-lg) 0;
+        }
+    }
+}
+
+@include media-breakpoint-down(lg){
+    .chat-popup-modal {
+        left: 310px;
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .chat-popup-modal {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

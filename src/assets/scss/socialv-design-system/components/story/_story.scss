@@ -1,0 +1,77 @@
+.stories {
+    &.storiesWrapper {
+        &.carousel {
+            .story {
+                flex-shrink: 0;
+                width: 90px;
+                margin: 0 6px;
+
+                &:first-child{
+                    margin-left: 6px;
+                }
+
+                &>.item-link {
+                    margin-top: 5px;
+
+                    &>.item-preview {
+                        position: relative;
+                        height: auto;
+                        max-height: max-content;
+                        overflow: visible;
+
+                        img {
+                            border-radius: 50%;
+                        }
+
+                        &::after {
+                            content: "";
+                            height: calc(100% + 10px);
+                            width: calc(100% + 10px);
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            border: 2px solid transparent;
+                            border-radius: 50%;
+                            background-image: linear-gradient(var(--bs-body-bg), var(--bs-body-bg)),
+                                linear-gradient(to right, #bd3381, #ee583f);
+                            background-origin: border-box;
+                            background-clip: content-box, border-box;
+                            z-index: -1;
+                        }
+                    }
+
+
+                    .info {
+                        margin-top: 1rem;
+
+                        .name {
+                            font-size: .75rem;
+                            font-weight: 500;
+                            color: var(--bs-body-color);
+                        }
+                    }
+
+                    &:hover {
+                        .info {
+                            .name {
+                                color: var(--bs-primary);
+                            }
+                        }
+                    }
+                }
+
+                &.seen {
+                    &>.item-link {
+                        &>.item-preview {
+                            &::after {
+                                background-image: none;
+                                border-color: var(--bs-border-color);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

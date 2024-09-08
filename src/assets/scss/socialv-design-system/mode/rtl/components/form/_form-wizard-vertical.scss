@@ -1,0 +1,20 @@
+.form-control[type="date"],
+.form-control[type="month"],
+.form-control[type="week"],
+.form-control[type="time"],
+.form-control[type="datetime-local"] {
+    position: relative;
+    &::-webkit-calendar-picker-indicator {
+        left: .75rem;
+        right: auto;
+    }
+}
+
+.form-control[type="search"]  {
+    position: relative;
+    &::-webkit-search-cancel-button  {
+        position: absolute;
+        left: .75rem;
+        right: auto;
+    }
+}

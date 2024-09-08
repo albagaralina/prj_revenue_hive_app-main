@@ -1,0 +1,43 @@
+@include media-breakpoint-down(lg) {
+    .iq-top-navbar {
+        .navbar-nav {
+            &.navbar-list {
+                li {
+                    &:first-child {
+                        .sub-drop {
+                            right: 0;
+                            left: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .navbar-nav.navbar-list {
+        li {
+            &.user-dropdown {
+                right: auto;
+                left: 0;
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .iq-nav-menu {
+        >li {
+            &:first-child {
+                >a {
+                    padding-right: 0;
+                    padding-left: 1.5625rem;
+                }
+            }
+            &:last-child {
+                >a {
+                    padding-left: 0;
+                }
+            }
+        }
+    } 
+}

@@ -1,0 +1,387 @@
+.iq-right-fixed {
+	margin: 0 0.938rem;
+}
+
+.right-sidebar-mini {
+	top: 4.5rem;
+	bottom: 0;
+	z-index: 100;
+	position: fixed;
+	width: 18.75rem;
+	right: 0;
+	z-index: 1;
+	transform: translateX(calc(111% + -2em));
+
+	@if $enable-transitions ==true {
+		@include transition-mixin(all 0.3s ease-in-out);
+	}
+
+	.side-left-icon {
+		display: none;
+	}
+
+	.iq-search-bar {
+		.searchbox {
+			width: 100%;
+		}
+
+		.search-input {
+			height: 48px;
+		}
+	}
+
+	.right-sidebar-tabs {
+		justify-content: center;
+		margin-bottom: 32px;
+
+		.nav-link {
+			position: relative;
+			border-width: 2px;
+			background-color: transparent;
+			padding: 0.625rem;
+			border: none;
+			flex: 1;
+			flex-shrink: 0;
+
+			&::after {
+				content: "";
+				background-color: transparent;
+				height: 2px;
+				width: 100%;
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				transition: all 0.3 ease-in;
+			}
+
+			&.active {
+				background-color: transparent;
+				border: none;
+
+				&::after {
+					background-color: var(--bs-primary);
+				}
+			}
+
+		}
+
+	}
+
+	.chat-tabs-content {
+		padding: 14px 16px;
+		background-color: transparent;
+		cursor: pointer;
+		transition: background-color .3s ease-in-out;
+
+		&:hover {
+			background-color: var(--bs-body-bg);
+		}
+	}
+
+	.card{
+		.card-body{
+			padding-bottom: 60px;
+
+			.conversion-button{
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				z-index: 1;
+			}
+		}
+	}
+}
+
+.right-sidebar-toggle {
+	position: absolute;
+	margin-left: -2.5rem;
+	background: var(--#{$prefix}gray-900);
+	padding: 0.5rem;
+	display: inline;
+	top: 0;
+	z-index: 99;
+
+	@if $enable-rounded ==true {
+		@include radius-mixin(30px 0px 0px 30px);
+	}
+
+	@if $enable-shadows ==true {
+		@include shadow-mixin($box-shadow);
+	}
+
+	cursor: pointer;
+}
+
+.right-sidebar-panel {
+	background-color: var(--#{$prefix}gray-900);
+
+	@if $enable-shadows ==true {
+		@include shadow-mixin($box-shadow);
+	}
+
+	height: 100%;
+	padding: 0.938rem;
+
+	.media-height {
+		height: calc(100vh - 352px);
+		overflow-y: scroll;
+	}
+}
+
+.right-sidebar {
+	transform: translateX(calc(10% + -1em));
+
+	.side-right-icon {
+		display: block;
+	}
+
+	.side-left-icon {
+		display: none;
+	}
+
+	&.right-sidebar-mini {
+		.side-right-icon {
+			display: none;
+		}
+
+		.side-left-icon {
+			display: block;
+		}
+	}
+}
+
+.offcanvas.live-customizer {
+	z-index: 1111;
+}
+
+@media (min-width: 1599.98px){
+	.right-sidebar-mini {
+		transform: translateX(calc(10% + -2em));
+
+		&:hover {
+			.right-sidebar-toggle {
+				opacity: 1;
+				margin-left: -2.5rem;
+
+				@if $enable-transitions ==true {
+					@include transition-mixin(all 0.3s ease-in-out);
+				}
+			}
+		}
+	}
+
+	.right-sidebar-toggle {
+		z-index: -1;
+		opacity: 0;
+		margin-left: 0;
+
+		@if $enable-transitions ==true {
+			@include transition-mixin(all 0.3s ease-in-out);
+		}
+	}
+
+	.right-sidebar-mini.right-sidebar {
+		.right-sidebar-toggle {
+			margin-left: -2.5rem;
+			opacity: 1;
+		}
+
+		transform: translateX(calc(111% + -2em));
+	}
+}
+
+@media (min-width:1200px) {
+	body.sidebar-main {
+		.iq-sidebar {
+			width: 5rem;
+
+			.iq-sidebar-menu {
+				.iq-menu {
+					li {
+						a {
+							span {
+								opacity: 0;
+								display: none;
+
+								@if $enable-transitions ==true {
+									@include transition-mixin(all 0.3s ease-in-out);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.iq-sidebar-logo {
+			a {
+				span {
+					opacity: 0;
+					display: none;
+
+					@if $enable-transitions ==true {
+						@include transition-mixin(all 0.3s ease-in-out);
+					}
+				}
+			}
+		}
+
+		.iq-sidebar-menu {
+			.iq-menu {
+				li {
+					a {
+						.badge {
+							opacity: 0;
+							display: none;
+
+							@if $enable-transitions ==true {
+								@include transition-mixin(all 0.3s ease-in-out);
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.iq-footer {
+			margin-left: 5rem;
+			width: calc(100vw - 24.2rem);
+		}
+
+		&.right-sidebar-close {
+			.iq-footer {
+				width: calc(100vw - 5.5rem);
+			}
+		}
+	}
+
+	body {
+		&.right-sidebar-close {
+			.iq-footer {
+				width: calc(100vw - 5.5rem);
+			}
+		}
+
+		&:not(.sidebar-main) {
+			&.right-sidebar-close {
+				.iq-footer {
+					width: calc(100vw - 15.5rem);
+				}
+			}
+		}
+	}
+
+	.sidebar-main {
+		.iq-sidebar {
+			.iq-submenu {
+				li {
+					a {
+						font-size: 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+.chat-popup-modal{
+	background-color: var(--#{$prefix}gray-900);
+	display: none;
+	border-radius: var(--bs-border-radius-lg);
+	overflow: hidden;
+	width: 300px;
+	position: fixed;
+	bottom: 0;
+	right: 350px;
+	z-index: 102;
+	box-shadow: var(--bs-box-shadow);
+
+	&.show{
+		display: inline-block;
+	}
+
+	.chat-popup-body{
+		.chat {
+			height: 168px;
+			overflow-y: auto;
+		}
+	}
+
+	.chat-popup-form{
+		position: relative;
+
+		input{
+			padding: $input-padding-y 50px $input-padding-y $input-padding-x;
+		}
+
+		.chat-popup-form-button{
+			line-height: normal;
+			position: absolute;
+			height: 100%;
+			top: 50%;
+			right: 0;
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+			transform: translateY(-50%);
+		}
+	}
+
+	.chat-popup-message{
+		border-radius: var(--bs-border-radius-lg) var(--bs-border-radius-lg) var(--bs-border-radius-lg) 0;
+
+		&.message-right{
+			border-radius: var(--bs-border-radius-lg) var(--bs-border-radius-lg) 0 var(--bs-border-radius-lg);
+		}
+	}
+}
+
+@media (max-width: 1601px){
+	.right-sidebar-panel{
+		.media-height{
+			height: calc(100vh - 320px);
+		}
+	}
+}
+
+@media (min-width:1300px) and (max-width:1499px) {
+	.right-sidebar-mini {
+		.media-body {
+			@include opacity-mixin(0);
+		}
+	}
+
+	.right-sidebar-mini.right-sidebar {
+		transform: translateX(calc(10% + -1em));
+
+		.media-body {
+			@include opacity-mixin(0);
+		}
+	}
+
+}
+
+@include media-breakpoint-down(lg) {
+	.right-sidebar-toggle {
+		position: absolute;
+		top: 50%;
+	}
+
+	.right-sidebar-panel {
+		.media-height {
+			height: calc(100vh - 256px);
+		}
+	}
+
+	.chat-popup-modal{
+		right: 310px;
+	}
+}
+
+@include media-breakpoint-down(md){
+	.chat-popup-modal{
+		right: 50%;
+		width: 285px;
+		transform: translateX(50%);
+	}
+}

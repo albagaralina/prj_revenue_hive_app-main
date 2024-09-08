@@ -1,0 +1,44 @@
+.fc {
+    &.fc-unthemed {
+
+        .fc-divider,
+        .fc-popover .fc-header,
+        .fc-list-heading td,
+        .fc-list-empty {
+            background: var(--bs-light-bg-subtle);
+        }
+
+        .fc-list-item {
+            &:hover {
+                td {
+                    background: var(--#{$prefix}gray-200);
+                }
+            }
+        }
+
+        .fc-body {
+            &.fc-widget-content {
+                background-color: var(--#{$prefix}gray-900);
+            }
+        }
+
+        th,
+        td,
+        thead,
+        tbody,
+        .fc-divider,
+        .fc-row,
+        .fc-content,
+        .fc-popover,
+        .fc-list-view,
+        .fc-list-heading td {
+            border-color: var(--bs-border-color);
+        }
+    }
+}
+
+.fc-today {
+    .fc-day-number {
+        color: var(--bs-heading-color);
+    }
+}

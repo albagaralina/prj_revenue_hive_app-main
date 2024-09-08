@@ -1,0 +1,42 @@
+.sidebar {
+    &+.main-content {
+        margin-right: var(--sidebar-width);
+        margin-left: auto;
+
+        .content-inner {
+            margin-right: auto;
+            margin-left: 16.25rem;
+        }
+    }
+}
+
+@include media-breakpoint-down(xl) {
+
+    .sidebar-default.sidebar-mini.sidebar-boxed+.main-content,
+    .sidebar-default.sidebar-boxed+.main-content,
+    .sidebar-default.sidebar-mini+.main-content,
+    .sidebar-default+.main-content {
+        margin-right: 0;
+        margin-left: unset;
+    }
+}
+
+@include media-breakpoint-down(xxl) {
+    .sidebar {
+        &+.main-content {
+            .content-inner {
+                margin-left: 7.25rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 1199px) {
+    .sidebar {
+        &+.main-content {
+            .content-inner {
+                margin-left: auto;
+            }
+        }
+    }
+}

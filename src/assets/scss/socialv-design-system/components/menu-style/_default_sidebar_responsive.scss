@@ -1,0 +1,18 @@
+
+
+@include media-breakpoint-down(lg) {
+    .right-sidebar-mini {
+        top: 0;
+        z-index: 101;
+    }
+}
+@media (max-width: 1199.98px){
+    .sidebar{
+        &.sidebar-mini+.main-content {
+            margin-left: 0;
+        }
+        &.sidebar-mini{
+            transform: translateX(-250%);
+        }
+    }
+}

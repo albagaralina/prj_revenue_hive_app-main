@@ -1,0 +1,23 @@
+.sidebar {
+    &.sidebar-chat {
+        &.sidebar-base {
+            &+.main-content {
+                margin-right: 29.375rem;
+                margin-left: auto;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(xl) {
+    .sidebar {
+        &.sidebar-chat {
+            &.sidebar-base {
+                &+.main-content {
+                    margin-right: 0;
+                    margin-left: auto;
+                }
+            }
+        }
+    }
+}

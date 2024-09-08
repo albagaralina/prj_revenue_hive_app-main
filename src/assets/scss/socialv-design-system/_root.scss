@@ -1,0 +1,44 @@
+[data-bs-theme="dark"] {
+  --#{$prefix}gray-900: #0f0f0f;
+  --#{$prefix}gray-900-rgb: to-rgb($gray-900);
+  --#{$prefix}gray-800: #343a40;
+  --#{$prefix}gray-100: #181818;
+  --#{$prefix}gray-100-rgb: 24, 24, 24;
+  --#{$prefix}gray-200: #181818;
+  --#{$prefix}gray-300: #202020;
+  --#{$prefix}box-shadow: 1rem 1rem 2.5rem 0 rgba(255, 255, 255, 0.05);
+  --#{$prefix}box-shadow-sm: .5rem .5rem 2.5rem 0 rgba(255, 255, 255, 0.05);
+  --#{$prefix}box-shadow-lg: 1.5rem 1.5rem 2.5rem 0 rgba(255, 255, 255, .175);
+  --#{$prefix}box-shadow-inset: inset 0 1px 2px rgba(255, 255, 255, .075);
+
+  .text-dark {
+    color: var(--bs-white) !important;
+  }
+
+  .input-group .input-group-text,
+  .form-control::file-selector-button {
+    background-color: var(--#{$prefix}gray-200);
+  }
+
+  .form-control {
+    &::placeholder {
+      color: var(--bs-body-color);
+    }
+  }
+
+  .img-light {
+    display: none;
+  }
+
+  .img-dark {
+    display: block;
+  }
+
+  .form-control{
+    &:hover:not(:disabled):not([readonly])::file-selector-button {
+      color: var(--bs-gray-200);
+      background-color: var(--bs-heading-color);
+    }
+  }
+
+}

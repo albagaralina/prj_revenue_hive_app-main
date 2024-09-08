@@ -1,0 +1,10 @@
+.sidebar{
+    &.sidebar-chat{
+        &.sidebar-base{
+            .sidebar-toggle{
+                right: auto;
+                left: 20px;
+            }
+        }
+    }
+}
